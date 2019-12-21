@@ -11,5 +11,6 @@
 
 #### 2. Mobile optimized PWA
   * go to `cd assignment2`
-  * run `npm start`
+  * run `npm start` to start app
+  * run `npm test` to run test
   * one sample pwa audit html file added in root dir 'pwa-audit-sample.html'
