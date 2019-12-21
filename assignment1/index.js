@@ -55,5 +55,5 @@ class CustomJSON {
   }
 }
 
-const str = "interview_attendance:P,interview_date:2019-04-15--to--2019-04-15,status:CAP"
-console.log(CustomJSON.parse(str))
+// const str = "interview_attendance:P,interview_date:2019-04-15--to--2019-04-15,status:CAP"
+// console.log(CustomJSON.parse(str))
