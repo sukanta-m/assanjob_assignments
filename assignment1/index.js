@@ -1,6 +1,6 @@
 class CustomJSON {
   static parse(str = null) {
-    if (!str || typeof str !== "string") return str;
+    if (!str || typeof str !== "string") return null;
     else {
       const obj = { "and": {} };
       const parts = str.split(",");
