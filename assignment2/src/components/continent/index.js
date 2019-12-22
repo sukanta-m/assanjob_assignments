@@ -1,9 +1,11 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import Loader from "../common/loader";
 import CountryList from "../continent/countryList";
 
 class Continent extends React.Component {
   componentDidMount() {
+    //on page refreshed, we needs to do api call for specific continent details
     if (!this.props.continent.code) {
       this.props.fetchContinent(this.props.match.params.code);
     }
@@ -26,4 +28,12 @@ class Continent extends React.Component {
   }
 }
 
+Continent.propTypes = {
+  continent: PropTypes.object.isRequired,
+  loading: PropTypes.bool
+}
+
+Continent.defaultProps = {
+  loading: false
+}
 export default Continent;

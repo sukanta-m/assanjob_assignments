@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import Table from "react-bootstrap/Table";
 
 import TableHead from "../common/table/thead";
@@ -31,4 +32,12 @@ const List = ({ continents, handleOnRowClick }) => {
   )
 }
 
+List.propTypes = {
+  continents: PropTypes.arrayOf(PropTypes.object),
+  handleOnRowClick: PropTypes.func.isRequired
+}
+
+List.defaultProps = {
+  continents: []
+}
 export default List;
