@@ -13,7 +13,8 @@
   * run `npm i`
   * run `npm start` to start app
   * to test PWA 
-    * run `npm run start-sw`
+    * run `npm run build`
+    * and run `npm run start-sw`
     * navigate to `127.0.0.1:8080` in your Chrome browser
     * then open chrome devtool
     * then select to `audit` tab
