@@ -10,12 +10,11 @@ import TableHeadCell from "../common/table/headCell";
 const CountryList = ({ countries }) => {
   return (
     <div>
-      <h5>Contries:</h5>
+      <h5 className="padding-left10">Contries:</h5>
       <Table striped bordered hover responsive>
         <TableHead>
           <TableRow>
-            <TableHeadCell>#</TableHeadCell>
-            <TableHeadCell>Country Name</TableHeadCell>
+            <TableHeadCell>Name</TableHeadCell>
             <TableHeadCell>Code</TableHeadCell>
             <TableHeadCell>Native</TableHeadCell>
             <TableHeadCell>Phone</TableHeadCell>
@@ -25,18 +24,17 @@ const CountryList = ({ countries }) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {countries.length === 0 && <TableRow><td colSpan="3">No records found</td></TableRow>}
+          {countries.length === 0 && <TableRow><td colSpan="7">No records found</td></TableRow>}
           {!!countries.length && (
-            countries.map((country, index) => {
+            countries.map(country => {
               return <TableRow code={country.code} key={country.code}>
-                <TableCell>{index + 1}</TableCell>
-                <TableCell>{country.name}</TableCell>
-                <TableCell>{country.code}</TableCell>
-                <TableCell>{country.native}</TableCell>
-                <TableCell>{country.phone}</TableCell>
-                <TableCell>{country.languages.map(lang => lang.name).join(", ")}</TableCell>
-                <TableCell>{country.emoji}</TableCell>
-                <TableCell>{country.emojiU}</TableCell>
+                <TableCell label="Name">{country.name}</TableCell>
+                <TableCell label="Code">{country.code}</TableCell>
+                <TableCell label="Native">{country.native}</TableCell>
+                <TableCell label="Phone">{country.phone}</TableCell>
+                <TableCell label="Language">{country.languages.map(lang => lang.name).join(", ")}</TableCell>
+                <TableCell label="Emoji">{country.emoji}</TableCell>
+                <TableCell label="EmojiU">{country.emojiU}</TableCell>
               </TableRow>
             })
           )}

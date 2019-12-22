@@ -1,11 +1,13 @@
 import axios from "axios";
 
 const { CancelToken } = axios
-const axiosTokenArr = [];
-export default () => {
-  if (axiosTokenArr.length) {
-    axiosTokenArr[0].cancel('Operation cancelled by user')
+const axiosTokens = {};
+
+export default (type) => {
+  axiosTokens[type] = axiosTokens[type] || [];
+  if (axiosTokens[type].length) {
+    axiosTokens[type][0].cancel('Operation cancelled by user')
   }
-  axiosTokenArr[0] = CancelToken.source()
-  return { cancelToken: axiosTokenArr[0].token };
+  axiosTokens[type][0] = CancelToken.source()
+  return { cancelToken: axiosTokens[type][0].token };
 }

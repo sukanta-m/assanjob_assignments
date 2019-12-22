@@ -19,7 +19,7 @@ class Continents extends React.Component {
 
     return (
       <div className="margin-100">
-        <h1>Continents:</h1>
+        <h1 className="padding-left10">Continents:</h1>
         {loading ? <Loader /> : <List continents={list} handleOnRowClick={this.handleOnRowClick} />}
       </div>
     );

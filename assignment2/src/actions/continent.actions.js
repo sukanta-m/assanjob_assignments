@@ -26,14 +26,14 @@ export const fetchContinents = () => (dispatch, getState) => {
 /*
   .action for fetching selected continent
   .used axios for canceling request
-  .cancelRequest() util method for canceling request
+  .cancelRequest(type) util method for canceling request
 */
 export const fetchContinent = (code) => (dispatch, getState) => {
   dispatch({ type: actionTypes.CONTINENET_FETCH_REQUEST });
   return axios.post(GRAPHQL_URL, {
     query: getContinent,
     variables: { code }
-  }, cancelRequest()).then(response => {
+  }, cancelRequest(actionTypes.CONTINENET_FETCH_REQUEST)).then(response => {
     return dispatch({
       type: actionTypes.CONTINENET_FETCH_SUCCESS,
       payload: response.data.data.continent

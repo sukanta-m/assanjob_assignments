@@ -12,11 +12,31 @@ body {
 .cursor-pointer {
   cursor: pointer;
 }
-@media only screen and (max-width: 768px) {
+
+@media only screen and (max-device-width: 768px), only screen and (max-width: 768px) {
+  .padding-left10 {
+    padding-left: 10px;
+  }
   .main-wrapper {
-    margin: 0 5px;
+    margin: 0;
   }
   .margin-100 {
-    margin: 10px;
+    margin: 10px 0;
+  }
+  table thead {
+    display: none;
+  }
+  table td {
+    display: flex;
+  }
+  table td::before {
+    content: attr(label);
+    font-weight: bold;
+    width: 120px;
+    min-width: 120px;
+  }
+  .table-striped tbody tr {
+    background-color: rgba(0,0,0,.05);
+    border-bottom: 8px solid white;
   }
 }

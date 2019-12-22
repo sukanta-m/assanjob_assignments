@@ -12,7 +12,6 @@ const List = ({ continents, handleOnRowClick }) => {
     <Table striped bordered hover responsive>
       <TableHead>
         <TableRow>
-          <TableHeadCell>#</TableHeadCell>
           <TableHeadCell>Name</TableHeadCell>
           <TableHeadCell>Code</TableHeadCell>
         </TableRow>
@@ -20,11 +19,10 @@ const List = ({ continents, handleOnRowClick }) => {
       <TableBody className="cursor-pointer">
         {continents.length === 0 && <TableRow><td colSpan="3">No records found</td></TableRow>}
         {!!continents.length && (
-          continents.map((continent, index) => {
+          continents.map(continent => {
             return <TableRow code={continent.code} key={continent.code} onClick={handleOnRowClick}>
-              <TableCell>{index + 1}</TableCell>
-              <TableCell>{continent.name}</TableCell>
-              <TableCell>{continent.code}</TableCell>
+              <TableCell label="Name">{continent.name}</TableCell>
+              <TableCell label="Code">{continent.code}</TableCell>
             </TableRow>
           })
         )}

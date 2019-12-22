@@ -1,3 +1,3 @@
 import React from "react";
 
-export default ({ children }) => <td>{children}</td>;
+export default ({ children, label }) => <td label={label}>{children}</td>;

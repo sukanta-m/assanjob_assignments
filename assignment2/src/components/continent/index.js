@@ -17,7 +17,7 @@ class Continent extends React.Component {
         {loading && <Loader />}
         {!loading && (
           <React.Fragment>
-            <h1>{continent.name}({continent.code})</h1>
+            <h1 className="padding-left10">{continent.name}({this.props.match.params.code})</h1>
             <CountryList countries={continent.countries} />
           </React.Fragment>
         )}
